@@ -17,7 +17,7 @@
 body {
     background: #000;
     color: white;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* NAVBAR */
@@ -28,7 +28,7 @@ nav {
     background: #000;
     padding: 15px 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     z-index: 1000;
     border-bottom: 1px solid #222;
@@ -37,6 +37,7 @@ nav {
 nav h2 a {
     color: #FFD700;
     text-decoration: none;
+    margin-right: 40px;
 }
 
 nav a {
@@ -87,29 +88,10 @@ nav a:hover {
     margin-top: 10px;
 }
 
-/* HOME SECTION */
-#home {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#home h1 {
-    font-size: 64px;
-    letter-spacing: 2px;
-    color: #FFD700;
-}
-
-#home p {
-    font-size: 22px;
-    margin-top: 10px;
-}
-
 /* CONTENT SECTIONS */
 #content {
     display: none;
+    padding-top: 100px;
 }
 
 section {
@@ -122,7 +104,9 @@ section {
     background: #111;
     border: 2px solid #FFD700;
     border-radius: 15px;
-    box-shadow: 0 0 20px #FFD700;
+    box-shadow: 0 0 15px #FFD700;
+    animation: glowPulse 2s infinite alternate;
+    cursor: default;
 }
 
 section.show {
@@ -130,12 +114,27 @@ section.show {
     transform: translateY(0);
 }
 
+section:hover {
+    box-shadow: 0 0 30px #FFD700, 0 0 60px #FFD70066, 0 0 90px #FFD70044;
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD70033, 0 0 30px #FFD70022;
+    }
+    50% {
+        box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD70033, 0 0 60px #FFD70022;
+    }
+    100% {
+        box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD70033, 0 0 30px #FFD70022;
+    }
+}
+
 h1, h2 {
     color: #FFD700;
     margin-bottom: 15px;
 }
 
-/* TEXT */
 p {
     color: #fff;
     line-height: 1.6;
@@ -145,12 +144,10 @@ p {
 <body>
 
 <nav>
-    <h2><a href="#home">Mohsin</a></h2>
-    <div>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#gym">Gym</a>
-    </div>
+    <h2><a href="#about">Mohsin</a></h2>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#gym">Gym</a>
 </nav>
 
 <!-- LOADER -->
@@ -164,11 +161,6 @@ p {
 
 <!-- MAIN CONTENT -->
 <div id="content">
-
-    <section id="home">
-        <h1>Mohsin M</h1>
-        <p>Gym Enthusiast</p>
-    </section>
 
     <section id="about">
         <h1>About Me</h1>
