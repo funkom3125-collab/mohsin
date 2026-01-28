@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mohsin's Website</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background: #111;
+        color: white;
+        overflow: hidden;
+    }
+
+    /* Loader Screen */
+    #loader {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #111;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #loader h1 {
+        margin-bottom: 20px;
+        font-size: 32px;
+    }
+
+    .progress-container {
+        width: 300px;
+        height: 20px;
+        background: #333;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        height: 100%;
+        width: 0%;
+        background: #FFD700; /* Yellow */
+        transition: width 0.1s;
+    }
+
+    #percent {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    /* Main Content */
+    #content {
+        display: none;
+        text-align: center;
+        padding-top: 40vh;
+    }
+</style>
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+    <h1>Mohsin’s Website</h1>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div id="percent">0%</div>
+</div>
+
+<!-- Website Content -->
+<div id="content">
+    <h1>Welcome to Mohsin’s Website 🚀</h1>
+    <p>Your site has loaded successfully.</p>
+</div>
+
+<script>
+let progress = 0;
+let progressBar = document.getElementById("progressBar");
+let percentText = document.getElementById("percent");
+let loader = document.getElementById("loader");
+let content = document.getElementById("content");
+
+let interval = setInterval(() => {
+    progress++;
+    progressBar.style.width = progress + "%";
+    percentText.innerText = progress + "%";
+
+    if (progress >= 100) {
+        clearInterval(interval);
+        setTimeout(() => {
+            loader.style.display = "none";
+            content.style.display = "block";
+            document.body.style.overflow = "auto";
+        }, 500);
+    }
+}, 30);
+</script>
+
+</body>
+</html>
