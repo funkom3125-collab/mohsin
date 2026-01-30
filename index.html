@@ -1,2 +1,175 @@
 <!DOCTYPE html>
-=
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keagan Hillery | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;background:#f5f7fa;color:#111;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+
+/* HEADER */
+header{
+display:flex;align-items:center;justify-content:space-between;
+padding:20px 50px;
+background:rgba(255,255,255,0.95);
+backdrop-filter:blur(6px);
+position:sticky;top:0;z-index:100;
+transition:0.3s;
+}
+header.sticky{box-shadow:0 5px 15px rgba(0,0,0,0.15);}
+header img{height:50px;cursor:pointer;transition:0.3s;}
+header img:hover{transform:scale(1.1);}
+nav a{margin-left:30px;font-weight:600;transition:0.3s;}
+nav a:hover{color:#3a8edb;}
+
+/* HERO */
+.hero{
+height:100vh;display:flex;justify-content:center;align-items:center;
+text-align:center;position:relative;color:#fff;overflow:hidden;
+background:linear-gradient(-45deg,#3a8edb,#6fc1ff,#00d4ff,#1a9fff);
+background-size:400% 400%;animation:gradientBG 15s ease infinite;
+}
+.hero::after{
+content:"";position:absolute;width:100%;height:100%;
+background:rgba(58,142,219,0.65);z-index:1;
+}
+.hero-content{position:relative;z-index:2;}
+
+.hero-content h1,.hero-content p,.hero-content a{
+opacity:0;transform:translateY(30px);animation-fill-mode:forwards;
+}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+.hero-content h1{animation:fadeUp 1s ease .5s forwards;font-size:3.5em;margin-bottom:20px;text-shadow:2px 2px 10px rgba(0,0,0,0.2);}
+.hero-content p{animation:fadeUp 1s ease .8s forwards;font-size:1.3em;max-width:600px;margin:0 auto 30px;}
+.hero-content a{animation:fadeUp 1s ease 1.1s forwards;display:inline-block;padding:14px 35px;background:#fff;color:#3a8edb;border-radius:50px;font-weight:600;transition:.3s;}
+.hero-content a:hover{background:#6fc1ff;color:#fff;}
+
+@keyframes gradientBG{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+/* SECTIONS */
+section{padding:80px 20px;}
+h2{text-align:center;color:#3a8edb;font-size:2.5em;margin-bottom:40px;}
+.about p{max-width:800px;margin:auto;text-align:center;font-size:1.1em;}
+
+/* CARDS */
+.card-container{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;}
+.card{
+background:rgba(255,255,255,0.8);
+backdrop-filter:blur(10px);
+border-radius:20px;padding:25px;width:280px;
+box-shadow:0 15px 30px rgba(0,0,0,0.1);
+transition:.3s;
+}
+.card:hover{transform:translateY(-10px);box-shadow:0 25px 35px rgba(0,0,0,0.15);}
+.card i{font-size:3em;color:#3a8edb;text-align:center;display:block;margin-bottom:15px;transition:.3s;}
+.card:hover i{transform:scale(1.2);color:#6fc1ff;}
+.card img{width:60px;height:60px;object-fit:cover;border-radius:12px;margin:0 auto 15px;display:block;}
+.card h3{text-align:center;color:#3a8edb;margin-bottom:10px;}
+.card p{text-align:center;font-size:.95em;color:#555;}
+
+/* LINKS */
+.links{text-align:center;}
+.links a{
+display:inline-block;margin:10px 15px;padding:14px 30px;
+background:#3a8edb;color:#fff;border-radius:50px;
+font-weight:600;transition:.3s;
+}
+.links a:hover{background:#6fc1ff;transform:translateY(-3px);}
+
+/* FOOTER */
+footer{
+background:#3a8edb;color:#fff;text-align:center;
+padding:40px 20px;font-size:.95em;
+}
+footer a{color:#fff;margin:0 10px;font-weight:600;}
+footer a:hover{color:#6fc1ff;text-decoration:underline;}
+
+@media(max-width:768px){
+header{flex-direction:column;gap:15px;}
+nav a{margin:0 10px;}
+.card-container{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body id="top">
+
+<header>
+<a href="#top"><img src="https://cdn.discordapp.com/attachments/1338240819991285821/1466870240632897687/Untitled74_20260130185834.png?ex=697e50de&is=697cff5e&hm=f5a9ad53ca0c13b5e41bd2467a2921bf6a9cfff66f685fec8fd24a84ca491197" alt="Logo"></a>
+<nav>
+<a href="#about">About</a>
+<a href="#whatido">What I Do</a>
+<a href="#experience">Experience</a>
+<a href="#links">Links</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Keagan Hillery</h1>
+<p>17-year-old graphic designer & website developer passionate about creativity and technology. I craft bold designs and websites that make an impact.</p>
+<a href="#links">View Work</a>
+</div>
+</section>
+
+<section id="about" class="about">
+<h2>About Me</h2>
+<p>My name is Keagan Hillery, and I’m a 17-year-old graphic designer and website developer with a strong passion for creativity and technology. I enjoy working on a wide range of projects and am always looking to improve my skills and take on new challenges.</p>
+</section>
+
+<section id="whatido">
+<h2>What I Do</h2>
+<div class="card-container">
+<div class="card"><i class="fas fa-code"></i><h3>Web Development</h3><p>Building clean, responsive websites using HTML, CSS, and JavaScript with performance and accessibility in mind.</p></div>
+<div class="card"><i class="fas fa-laptop-code"></i><h3>Software Engineering</h3><p>Learning Python and backend fundamentals while developing projects to grow problem-solving skills.</p></div>
+<div class="card"><i class="fas fa-shield-alt"></i><h3>Cybersecurity</h3><p>Exploring Linux security, networking basics, and hands-on labs to understand system protection.</p></div>
+<div class="card"><i class="fas fa-paint-brush"></i><h3>Graphic Design</h3><p>Experimenting with new design techniques to create unique, eye-catching visuals.</p></div>
+</div>
+</section>
+
+<section id="experience">
+<h2>Experience</h2>
+<div class="card-container">
+<div class="card">
+<img src="https://cdn.discordapp.com/attachments/1338240819991285821/1466856914380914869/Untitled38_20260117004854.png?ex=697e4475&is=697cf2f5&hm=21252b3f426b3cb942462a22a4659b76f5f19a925efac16c4c5cc63d66701371&">
+<h3>Ellnet Agency</h3>
+<p><strong>Founder & CEO:</strong>       Founder & CEO at Ellnet Agency. Leading all operations as owner, website developer, and graphics designer.
+        Passionate about creating bold designs and building brands that stand out..</p>
+</div>
+<div class="card">
+<img src="https://cdn.discordapp.com/attachments/1465097691435372659/1465097733336731668/eth.png?ex=697dccd7&is=697c7b57&hm=5821463d0095e29ec427379f7ffeadc53ee688d7880a66c8805e8ef76cef493d">
+<h3>CorviaCo</h3>
+<p><strong>Graphics Director:</strong>  Graphics Director at CorviaCo. Managing all commissions and designing high-quality visuals for clients,
+        improving branding, and bringing creative concepts to life while balancing client needs with vision.</p>
+</div>
+</div>
+</section>
+
+<section id="links" class="links">
+<h2>Find My Work</h2>
+<a href="https://www.behance.net/elysrismvisuals" target="_blank">Behance</a>
+<a href="https://x.com/keaganhillery" target="_blank">Twitter</a>
+<a href="https://docs.google.com/document/d/1P0aq2tMGmgB3qzmhZBEI9W2YZgsedVl3GQcFGSPnT_Q/edit" target="_blank">GFX Prices</a>
+<a href="mailto:keaganhillery@gmail.com">Email</a>
+</section>
+
+<footer>
+<p>© 2026 Keagan Hillery. All rights reserved.</p>
+<p>
+<a href="mailto:keaganhillery@gmail.com">Email</a> |
+<a href="https://www.behance.net/elysrismvisuals" target="_blank">Behance</a> |
+<a href="https://x.com/keaganhillery" target="_blank">Twitter</a>
+</p>
+</footer>
+
+<script>
+const header=document.querySelector('header');
+window.addEventListener('scroll',()=>{window.scrollY>20?header.classList.add('sticky'):header.classList.remove('sticky');});
+</script>
+
+</body>
+</html>
